@@ -1,9 +1,10 @@
 <div>
     <h1>Tasks</h1>
 
-    <input type="text" wire:model="task">
-
-    <button wire:click="add" class="bg-indigo-500 p-2">Add</button>
+    <form wire:submit="add">
+        <input type="text" wire:model="task">
+        <button class="bg-indigo-500 p-2">Add</button>
+    </form>
 
     <ul>
         @foreach ($tasks as $task)
