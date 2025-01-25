@@ -1,7 +1,9 @@
-import './bootstrap';
+import "./bootstrap";
 
-import Alpine from 'alpinejs';
+//Removed to avoid conflitcts with Livewire libraries that already contains Alpine.js
 
-window.Alpine = Alpine;
+// import Alpine from 'alpinejs';
 
-Alpine.start();
+// window.Alpine = Alpine;
+
+// Alpine.start();
