@@ -2,6 +2,12 @@
     <div class="max-w-md mx-auto">
         <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">Tasks</h1>
         <div>
+            @if (session('success'))
+                <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+                    role="alert">
+                    <span class="font-medium">Task Created!</span>
+                </div>
+            @endif
             <form wire:submit="save">
                 <div class="mb-3">
                     <label for="title"

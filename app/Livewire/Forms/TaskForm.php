@@ -20,4 +20,11 @@ class TaskForm extends Form
     public $priority;
     #[Rule('required')]
     public $deadline;
+
+    public function createTask()
+    {
+            auth()->user()->tasks()->create($this->all());
+            $this->reset();
+            request()->session()->flash('success', __('Task created successfully'));
+    }
 }
