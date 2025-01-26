@@ -11,6 +11,11 @@ class TasksList extends Component
 {
     use WithPagination;
 
+    public function placeholder()
+    {
+        return view('skeleton');
+    }
+
     #[Computed()]
     public function tasks()
     {
@@ -25,6 +30,9 @@ class TasksList extends Component
 
     public function render()
     {
+        // return view('livewire.tasks.tasks-list', [
+        //     'tasks' => auth()->user()->tasks()->orderBy('id', 'desc')->paginate(5)
+        // ]);
         return view('livewire.tasks.tasks-list');
     }
 }
