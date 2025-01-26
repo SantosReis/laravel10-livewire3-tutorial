@@ -3,6 +3,7 @@
 namespace App\Livewire\Tasks;
 
 use Livewire\Component;
+use Livewire\Attributes\On;
 use Livewire\WithPagination;
 use Livewire\Attributes\Computed;
 
@@ -14,6 +15,12 @@ class TasksList extends Component
     public function tasks()
     {
         return auth()->user()->tasks()->orderBy('id', 'desc')->paginate(5);
+    }
+
+    #[On('task-created')]
+    public function taskCreated()
+    {
+        unset($this->tasksByStatus);
     }
 
     public function render()
