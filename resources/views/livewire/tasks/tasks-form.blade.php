@@ -1,4 +1,4 @@
-<div class="w-4/12 bg-slate-200 dark:bg-gray-800 rounded-md mt-2">
+<div class="w-4/12 bg-slate-200 dark:bg-gray-800 rounded-md mt-4">
     <div class="mt-6 px-6">
         <div>
             <h1 class="text-2xl text-center font-semibold dark:text-white"">Welcome, <span
