@@ -1,7 +1,6 @@
 <div>
-    <h1>Tasks</h1>
     <div class="max-w-md mx-auto">
-        <h1 class="text-2xl font-semibold">New Task</h1>
+        <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">Tasks</h1>
         <div>
             <form wire:submit="save">
                 <div class="mb-3">
