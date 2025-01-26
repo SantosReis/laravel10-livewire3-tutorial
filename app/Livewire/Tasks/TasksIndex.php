@@ -3,29 +3,18 @@
 namespace App\Livewire\Tasks;
 
 use Livewire\Component;
-use Livewire\Attributes\Rule;
+use App\Livewire\Forms\TaskForm;
 
 class TasksIndex extends Component
 {
-    #[Rule('required|min:5')]
-    public $title;
-    #[Rule('required|min:5')]
-    public $slug;
-    #[Rule('required|min:5')]
-    public $description;
-    #[Rule('required')]
-    public $status;
-    #[Rule('required')]
-    public $priority;
-    #[Rule('required')]
-    public $deadline;
+
+    public TaskForm $form;
 
     public function save()
     {
         $this->validate();
-        auth()->user()->tasks()->create($this->only(['title', 'slug', 'description', 'status', 'priority', 'deadline']));
-
-        $this->reset();
+        auth()->user()->tasks()->create($this->form->all());
+        $this->form->reset();
     }
 
     public function render()

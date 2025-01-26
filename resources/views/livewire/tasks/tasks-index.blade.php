@@ -6,11 +6,11 @@
                 <div class="mb-3">
                     <label for="title"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                    <input wire:model.live="title" type="text"
+                    <input wire:model.live="form.title" type="text"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         id="title">
                     <div>
-                        @error('title')
+                        @error('form.title')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
@@ -18,11 +18,11 @@
                 <div class="mb-3">
                     <label for="slug"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Slug</label>
-                    <input wire:model="slug" type="text"
+                    <input wire:model="form.slug" type="text"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         id="slug">
                     <div>
-                        @error('slug')
+                        @error('form.slug')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
@@ -30,11 +30,11 @@
                 <div class="mb-3">
                     <label for="description"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                    <textarea wire:model="description" type="text"
+                    <textarea wire:model="form.description" type="text"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         id="description"></textarea>
                     <div>
-                        @error('description')
+                        @error('form.description')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
@@ -42,14 +42,14 @@
                 <div class="mb-3">
                     <label for="status"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</label>
-                    <select id="status" wire:model="status"
+                    <select id="status" wire:model="form.status"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         @foreach (\App\Enums\StatusType::cases() as $status)
                             <option value="{{ $status->value }}">{{ $status->name }}</option>
                         @endforeach
                     </select>
                     <div>
-                        @error('status')
+                        @error('form.status')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
@@ -57,14 +57,14 @@
                 <div class="mb-3">
                     <label for="priority"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Priority</label>
-                    <select id="priority" wire:model="priority"
+                    <select id="priority" wire:model="form.priority"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         @foreach (\App\Enums\PriorityType::cases() as $priority)
                             <option value="{{ $priority->value }}">{{ $priority->name }}</option>
                         @endforeach
                     </select>
                     <div>
-                        @error('priority')
+                        @error('form.priority')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
@@ -72,10 +72,10 @@
                 <div class="mb-3">
                     <label for="slug"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deadline</label>
-                    <input wire:model="deadline" type="date"
+                    <input wire:model="form.deadline" type="date"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <div>
-                        @error('deadline')
+                        @error('form.deadline')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
                     </div>

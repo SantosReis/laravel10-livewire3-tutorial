@@ -22,8 +22,8 @@ class Task extends Model
 
     protected $casts = [
         'deadline' => 'date',
-        'priority' => PriorityType::class,
-        'status' => StatusType::class,
+        // 'priority' => PriorityType::class,
+        // 'status' => StatusType::class,
     ];
 
     public function user(): BelongsTo
